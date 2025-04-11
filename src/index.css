@@ -21,7 +21,7 @@ body {
   align-items: center;
   background-color: #EAEAEA;
   padding: 1.25rem;
-  gap: 1.5rem;
+  gap: .5rem;
   height: 30rem;
   
 }
@@ -66,4 +66,29 @@ body {
   width: 100%;
   height: 1px;
   background-color: #ccc;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.email {
+  font-size: .8rem;
+}
+.commentDate {
+  font-size: .75rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+.commentTextArea {
+  font-size: .85rem;
+}
+.comments {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  height: 20rem;
+  overflow-y: auto;
+  max-width: 20rem;
+  word-wrap: break-word
 }
