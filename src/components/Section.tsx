@@ -31,7 +31,7 @@ function Section() {
         </form>
         <div className="separator"/>
         <div className="comments">
-           {comments.map((item, index) => (
+            {comments.length > 0 ? comments.map((item, index) => (
             
             <div className="comment" key={index}>
                 <div className='email'><h3>{item.email}</h3></div>
@@ -39,7 +39,8 @@ function Section() {
                 <div className='commentTextArea'><p>{item.comment}</p></div>
             </div>
            )
-        )}
+        ) : <p className='emptyComment'>Seja o primeiro a comentar!</p>}
+           {}
         </div>
 
 </>

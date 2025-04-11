@@ -84,6 +84,7 @@ body {
   font-size: .85rem;
 }
 .comments {
+  width: 100%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -91,4 +92,10 @@ body {
   overflow-y: auto;
   max-width: 20rem;
   word-wrap: break-word
+}
+.emptyComment {
+  width: 100%;
+  align-items: start;
+  margin-top: 1rem;
+  font-size: .75rem;
 }
