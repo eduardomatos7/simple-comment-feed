@@ -7,7 +7,12 @@ function Section() {
     
     const [email, setEmail] = useState('')
     const [comment, setComment] = useState('')
-    const [comments, setComments] = useState<{ email: string; comment: string; date: string; time: string }[]>([])
+    const [comments, setComments] = useState(() => {
+        const valueStorageComment = localStorage.getItem('comments')
+        if (valueStorageComment) {
+            return JSON.parse(valueStorageComment) as { email: string; comment: string; date: string; time: string }[]
+        }
+    })
 
     function handleSubmit(e: any){
         e.preventDefault()
@@ -17,7 +22,8 @@ function Section() {
             date: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
         }
-        setComments((prevComments) => [...prevComments, newComment])
+        setComments([...(comments || []), newComment])
+        localStorage.setItem('comments', JSON.stringify([...(comments || []), newComment]))
         setEmail('')
         setComment('')
     }
@@ -31,7 +37,7 @@ function Section() {
         </form>
         <div className="separator"/>
         <div className="comments">
-            {comments.length > 0 ? comments.map((item, index) => (
+            {comments && comments?.length > 0 ? comments.map((item, index) => (
             
             <div className="comment" key={index}>
                 <div className='email'><h3>{item.email}</h3></div>
