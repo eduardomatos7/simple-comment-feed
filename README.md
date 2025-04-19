@@ -14,10 +14,4 @@ Este é um projeto simples de um feed de comentários, desenvolvido para demonst
 - **TypeScript**: Superset do JavaScript para tipagem estática.
 - **Vite**: Ferramenta para desenvolvimento rápido.
   
-## Imagens
-
-<div style="display: flex; gap: 10px;">
-  <img src="image.png" alt="Captura de Tela 1" width="300" />
-  <img src="image-1.png" alt="Captura de Tela 2" width="600" />
-</div>
 
